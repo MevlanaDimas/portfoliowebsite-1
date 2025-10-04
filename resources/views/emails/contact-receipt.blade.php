@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Message</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #697565;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .content {
+            padding: 25px;
+        }
+        .content p {
+            margin: 0 0 15px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{{ config('app.url') }}" style="display: inline-block;">
+                <img src="cid:logo.png" alt="Portfolio Logo" style="width: 75px; height: auto;">
+            </a>
+            <h2 style="margin: 0;">Message Received!</h2>
+        </div>
+        <div class="content">
+            <p>Hi {{ $name }},</p>
+            <p>Thank you for reaching out! I have received your message and will get back to you as soon as possible.</p>
+            <p>Best regards,<br>Dimas Maulana</p>
+        </div>
+        <div class="footer">
+            <p>This is an automated response. Please do not reply to this email.</p>
+        </div>
+    </div>
+</body>
+</html>

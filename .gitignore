@@ -1,0 +1,23 @@
+# General
+/node_modules
+/public/storage
+/storage/*.key
+/storage/certs
+/.env
+/.env.backup
+
+# Laravel
+/vendor
+/public/hot
+/public/build
+/storage/app
+/storage/framework/cache/data
+/storage/framework/sessions
+/storage/framework/testing
+/storage/framework/views
+/storage/logs
+npm-debug.log
+yarn-error.log
+
+# Credentials
+*.json
