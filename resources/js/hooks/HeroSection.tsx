@@ -6,7 +6,7 @@ export const HeroSection = () => (
         <motion.div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-                backgroundImage: `url('/storage/img/background/wmremove-transformed.jpeg')`,
+                backgroundImage: `url('wmremove-transformed.jpeg')`,
             }}
             initial={{ filter: 'blur(8px)', scale: 1.1 }}
             animate={{ filter: 'blur(0px)', scale: 1 }}
