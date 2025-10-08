@@ -12,18 +12,6 @@ Route::get('/', [HomeController::class, 'viewHome'])->name('home');
 
 Route::post('/', [HomeController::class, 'sendMessage'])->name('home.message');
 
-Route::get('/message', function () {
-    $name = 'test';
-    $email = 'test@mail.com';
-    $msg = 'test';
-
-    return view('emails.contact-receipt', [
-        'name' => $name,
-        'email' => $email,
-        'msg' => $msg
-    ]);
-});
-
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('dashboard', [

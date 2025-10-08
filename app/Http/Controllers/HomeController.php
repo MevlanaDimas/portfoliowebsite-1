@@ -82,9 +82,14 @@ class HomeController extends Controller
             Mail::to($validatedData['email'])->send(new ContactFormReceipt($validatedData['name']));
 
             return redirect()->back()->with('success', 'Your message has been sent successfully.');
-        } catch (Exception $e) {
+        } catch (\Symfony\Component\Mailer\Exception\TransportExceptionInterface $e) {
+            // This catches specific mail transport errors
             Log::error('Message sending failed: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'An error occurred while sending the message. Please try again.');
+            return redirect()->back()->with('error', 'We couldn\'t send your message right now. Please try again later.');
+        } catch (Exception $e) {
+            // Catch any other unexpected errors
+            Log::error('An unexpected error occurred in sendMessage: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'An unexpected error occurred. Please try again.');
         }
     }
 }
